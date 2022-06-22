@@ -2,7 +2,7 @@ import sys
 import csv
 sys.setrecursionlimit(14000)
 
-# SUS FUNCIONES EMPIEZA AQUI
+# SUSs FUNCIONES EMPIEZA AQUI
 
 def merge(left, right)
     #SU SOLUCION EMPIEZA AQUI
