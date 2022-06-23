@@ -2,9 +2,9 @@ import sys
 import csv
 sys.setrecursionlimit(14000)
 
-# SUSs FUNCIONES EMPIEZA AQUI
+# SUS FUNCIONES EMPIEZA AQUI
 
-def merge(left, right)
+def merge(left, right):
     #SU SOLUCION EMPIEZA AQUI
 
 
@@ -37,7 +37,22 @@ class Solution:
         juegos = {}
 
         # SU SOLUCION EMPIEZA AQUI
-
+        with open(ruta) as ruta:
+            reader = csv.reader(ruta)
+            header = next(reader)
+            juegos = {
+                    int(rows[0]):
+                    {
+                        "Nombre": str(rows[1]),
+                        "Fecha_lanzamiento": str(rows[2]),
+                        "Edad_minima": str(rows[3]),
+                        "Generos": [rows[4]],
+                        "Criticas_positvas": int(rows[5]),
+                        "Criticas_negativas": int(rows[6]),
+                        "Tiempo_juego": int(rows[7]),
+                        "Precio": float(rows[8])                        
+                    } for rows in reader}
+            
 
 
         # SU SOLUCION TERMINA AQUI 
@@ -46,7 +61,7 @@ class Solution:
     def buscar_juegos_edad_minima(self, juegos):
         result = 0
         #SU SOLUCION EMPIEZA AQUI
-
+        
 
 
         #SU SOLUCION TERMINA AQUI
