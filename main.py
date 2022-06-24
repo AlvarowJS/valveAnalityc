@@ -39,13 +39,13 @@ class Solution:
         # SU SOLUCION EMPIEZA AQUI
         with open(ruta) as ruta:
             reader = csv.reader(ruta)
-            header = next(reader)
+            header = next(reader) 
             juegos = {
                     int(rows[0]):
                     {
                         "Nombre": str(rows[1]),
                         "Fecha_lanzamiento": str(rows[2]),
-                        "Edad_minima": str(rows[3]),
+                        "Edad_minima": int(rows[3]),
                         "Generos": [rows[4]],
                         "Criticas_positvas": int(rows[5]),
                         "Criticas_negativas": int(rows[6]),
@@ -61,9 +61,18 @@ class Solution:
     def buscar_juegos_edad_minima(self, juegos):
         result = 0
         #SU SOLUCION EMPIEZA AQUI
+        convert = list(juegos.keys())
+        array = []
+        for i in range(0, len(convert)):
+            aux = convert[i]   
+            positivas = juegos[aux].get('Criticas_positvas')
+            negativas = juegos[aux].get('Criticas_negativas')
+            total = positivas + negativas
+            criticasPositivas = (positivas/total) * 100
         
-
-
+            if juegos[aux].get('Edad_minima') > 17 and criticasPositivas > 50:    
+                array.append(aux)
+        result = len(array)
         #SU SOLUCION TERMINA AQUI
         return result 
     
